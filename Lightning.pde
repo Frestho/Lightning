@@ -1,4 +1,3 @@
-  
 int startX = 0;
 int startY = 150;
 int endX = 0;
@@ -11,10 +10,11 @@ void setup()
 }
 void draw()
 {
-  stroke((float) Math.random() * 255, (float) Math.random() * 255, (float) Math.random() * 255);
+  stroke((float) Math.random() * 255, (float) Math.random() * 255, (float) Math.random() * 255);  
   while(endX < 300) {
-    endX = startX + (int) (Math.random() * 10);
-    endY = startY + (int) (Math.random() * 19) - 9;
+    strokeWeight((float) Math.random() * 2 + 1);
+    endX = startX + randint(0, 9);
+    endY = startY + randint(-9, 9);
     line(startX, startY, endX, endY);
     startX = endX;
     startY = endY;
@@ -26,4 +26,7 @@ void mousePressed()
   startY = 150;
   endX = 0;
   endY = 150;
+}
+public int randint(int min, int max) {
+  return (int) (Math.random() * (max-min+1)) + min;
 }
