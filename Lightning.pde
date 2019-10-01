@@ -23,7 +23,7 @@ void draw()
 void mousePressed()
 {
   startX = 0;
-  startY = 150;
+  startY = mouseY;
   endX = 0;
   endY = 150;
 }
